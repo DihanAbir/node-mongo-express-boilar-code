@@ -19,7 +19,7 @@ module.exports.auth = async (req, res, next) => {
       req.user = user;
       next();
     } catch (error) {
-      req.status(500).send("unauthorize user / Try to modify token !");
+      res.status(500).send("unauthorize user / Try to modify token !");
     }
   } else {
     res.status(500).send("unauthorized  access!");

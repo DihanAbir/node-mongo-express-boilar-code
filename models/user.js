@@ -39,7 +39,10 @@ const userSchema = new mongoose.Schema({
 
 // generate token for persistance
 userSchema.methods.generateAuthToken = function () {
-  const token = jwt.sign({ id: this._id }, "secretKey", { expiresIn: "4h" });
+  // here we set what field will store on jwt for researve data
+  const token = jwt.sign({ id: this._id, email: this.email }, "secretKey", {
+    expiresIn: "4h",
+  });
   return token;
 };
 
