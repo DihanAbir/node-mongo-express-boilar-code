@@ -9,9 +9,13 @@ const { connectionDB } = require("./db/dbConnection");
 const notesRoute = require("./routes/noteRoutes");
 const usersRoute = require("./routes/user");
 const indexRoute = require("./routes/indexRoute");
+
+// custome middleware
+
 // middleware
 app.use(express.json());
 app.use(cookirParser("secreateKey"));
+app.use(auth);
 
 // calling databsae
 connectionDB();

@@ -9,6 +9,7 @@ module.exports.getNotesController = async (req, res) => {
 
 // get single datas section
 module.exports.getNoteController = async (req, res) => {
+  console.log(req.body.random);
   const errorss = validationResult(req);
 
   if (!errorss.isEmpty()) {
