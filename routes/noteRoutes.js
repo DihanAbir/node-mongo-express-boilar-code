@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const { check } = require("express-validator");
 
+// middleware
+const { auth } = require("../Middleware/auth");
+
 const {
   getNoteController,
   getNotesController,
@@ -24,7 +27,7 @@ router.post(
 );
 
 // get
-router.get("/", getNotesController);
+router.get("/", auth, getNotesController);
 
 // get single items
 router.get(

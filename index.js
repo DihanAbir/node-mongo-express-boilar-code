@@ -15,7 +15,7 @@ const indexRoute = require("./routes/indexRoute");
 // middleware
 app.use(express.json());
 app.use(cookirParser("secreateKey"));
-app.use(auth);
+// app.use(auth);
 
 // calling databsae
 connectionDB();

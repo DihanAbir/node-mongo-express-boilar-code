@@ -10,7 +10,14 @@ const {
   getuserController,
 } = require("../controllers/userController");
 
+// route operations
+
+// get
 router.get("/", getuserController);
+
+// single user
+router.get("/:id", userController);
+
 // POST
 router.post(
   "/",
@@ -40,8 +47,5 @@ router.post(
 
 // login user
 router.post("/login", loginController);
-
-// single user
-router.get("/:id", userController);
 
 module.exports = router;

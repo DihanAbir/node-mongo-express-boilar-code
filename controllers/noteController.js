@@ -1,15 +1,17 @@
-const Note = require("../models/notes");
 const { validationResult } = require("express-validator");
+
+// model
+const Note = require("../models/notes");
 
 // get all datas section
 module.exports.getNotesController = async (req, res) => {
+  console.log(req.user);
   const note = await Note.find();
   res.send(note);
 };
 
 // get single datas section
 module.exports.getNoteController = async (req, res) => {
-  console.log(req.body.random);
   const errorss = validationResult(req);
 
   if (!errorss.isEmpty()) {
